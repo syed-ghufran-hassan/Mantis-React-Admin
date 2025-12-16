@@ -72,13 +72,13 @@ const MainCard = forwardRef(
 
         {/* card footer - clipboard & highlighter  */}
         {codeHighlight && (
-          <>
-            <Divider sx={{ borderStyle: 'dashed' }} />
-            <Highlighter codeHighlight={codeHighlight} main>
-              {children}
-            </Highlighter>
-          </>
-        )}
+        <>
+        <Divider sx={{ borderStyle: 'dashed' }} />
+        <Highlighter codeHighlight={codeHighlight} main>
+       {typeof children === 'string' ? children : ''}
+       </Highlighter>
+       </>
+       )}
       </Card>
     );
   }
